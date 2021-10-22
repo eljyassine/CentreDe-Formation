@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+  padding :3%;
+}
+ 
+.contu {
+  float: left;
+  width: 32%;
+  padding: 10px;
+  margin-left: 10px;
+  
+  height: 250px; /* Should be removed. Only for demonstration */
+}
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 32%;
+  padding: 10px;
+  margin-left: 10px;
+ 
+  height: 280px; /* Should be removed. Only for demonstration */
+}
+img{width: 160%;padding:0 ;}
+
+/* Clear floats after the columns */
+.row:after {
+ 
+  content: "";
+  display: table;
+  clear: both;
+}
+h1{
+ color: #ffffff;
+   position: absolute;
+  top: 150px;
+  padding-left: 17%;
+}
+h2{color: #ffffff;
+  position: absolute;
+   top: 200px;
+   padding-left: 15%;
+}
+.textimg1{position: relative;
+  bottom: 75px;
+  left: 120px;
+  color: white;
+  width:50%;
+  font-size: 35px;
+  margin:0;
+  
+}
+.textimg2{position: relative;
+  bottom: 75px;
+  left: 70%;
+  color: white;
+  width:200%;
+  font-size: 25px;
+  margin:0;
+}
+ 
+
+
+.box {    height: 25.45625px;
+
+ display: inline-block; 
+ padding-top: 1%;
+ padding-right: 2px;
+
+}
+img{
+  width:60%;
+}
+table {
+  
+  margin-top:2%;
+ border-collapse: collapse;
+ border-spacing: 0;
+ width: 50%;
+ border:  0px solid #ddd;
+}
+
+th { background-color: #6600ff;
+ text-align: middle ;
+ padding: 16px;
+color: white;
+
+}
+
+td {font-size: 20px;
+ text-align:center;
+ padding: 25px;
+ 
+}
+
+tr:nth-child(even) {
+ background-color:  #b3b3cc;
+
+}
+.pas{
+  margin-top: 2000%;
+}

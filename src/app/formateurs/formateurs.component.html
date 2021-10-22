@@ -1,0 +1,101 @@
+<div class="row">
+  <div class="box"  ><img src="../../assets/6.png"> </div>
+  <div class="box"><img (click)="btnadd()" src="../../assets/9.png"  class="textimg"> </div>
+
+
+
+  <!--Ajouter  un formateur   -->
+
+  <form  *ngIf="ajoutertrue" #FormateuraddForm="ngForm" (ngSubmit)="add(FormateuraddForm.value)">
+    
+      <h2>Ajouter un Formateur</h2>
+    <ul>
+      <i>
+      <label for=" nom ">Nom</label>
+      <input type="text" name="nom" id=" nom " ngModel required>
+      </i>  
+      <i>
+        <label for=" prenom ">Prenom</label>
+        <input type="text" name="prenom" id=" prenom " ngModel required>
+      </i>    
+      <i>
+        <label for=" adress ">Adresse</label>
+        <input type="text" name="adress" id=" adress " ngModel required>
+      </i>     
+      <i>
+        <label for=" email ">Email</label>
+        <input type="email" name="email" id=" email " ngModel required>
+      </i> 
+      <i >
+        <label  for=" post ">post d'expertise</label>
+        <input  type="text" name="post" id=" post " ngModel required>
+      </i> 
+    
+    </ul>
+    <button type="submit" [disabled]="!FormateuraddForm.form.valid">Enregistrer</button>
+  </form>
+  
+
+
+<!--Modier un formateur avec son id -->
+
+
+
+  <form  *ngIf="modiftrue" #FormateurchangeForm="ngForm" (ngSubmit)="edit(FormateurchangeForm.value)">
+    
+    <h2>Modifier les informations du Formateur </h2>
+  <ul>
+    <i>
+    <label for=" nom ">Nom</label>
+    <input type="text" name="nom" id=" nom "  [(ngModel)]="formateur.nom" required>
+
+  </i>     
+    <i>
+      <label for=" prenom ">Prenom</label>
+      <input type="text" name="prenom" id=" prenom "  [(ngModel)]="formateur.prenom" required>
+     
+    </i>     
+    <i>
+      <label for=" adress ">Adresse</label>
+      <input type="text" name="adress" id=" adress " [(ngModel)]="formateur.adresse" required>
+     
+    </i>     
+    <i>
+      <label for=" email ">Email</label>
+      <input type="email" name="email" id=" email "  [(ngModel)]="formateur.email" required>
+   
+    </i>     
+    <i >
+      <label  for=" post ">post </label>
+      <input  type="text" name="post" id=" post " [(ngModel)]="formateur.post" required>
+      
+    </i>     
+  
+  </ul>
+  <button type="submit" [disabled]="!FormateurchangeForm.form.valid">Modifier</button>
+</form>
+<table>
+   
+  <tr>
+    <th colspan="2">Listes des Formateurs </th>
+    </tr>
+    
+  <tr *ngFor="let formateurss of formateurs ;index as i ">
+    <td width=85%>
+      {{i}} : 
+      <b>Nom:</b>{{formateurss.nom}}|
+      <b>Prenom:</b>{{formateurss.prenom}} |
+      <b>Adresse:</b>{{formateurss.adresse}}|
+      <b>Email:</b>{{formateurss.email}}|
+      <b>post:</b>{{formateurss.post}}
+    </td>
+    <td width=15%><img (click)="bntedit(formateurss.id)" src="../../assets/8.png"  class="textimg"><img (click)="delete(formateurss.id)" src="../../assets/5.png"  class="textimg"> </td>
+  </tr>
+     
+  
+</table>
+
+  
+
+
+</div>

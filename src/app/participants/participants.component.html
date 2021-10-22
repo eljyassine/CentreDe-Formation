@@ -1,0 +1,101 @@
+<div class="row">
+  <div class="box"  ><img src="../../assets/6.png"> </div>
+  <div class="box"><img (click)="btnadd()" src="../../assets/9.png"  class="textimg"> </div>
+
+
+
+  <!--Ajouter  un participant   -->
+
+  <form  *ngIf="ajoutertrue" #participantaddForm="ngForm" (ngSubmit)="add(participantaddForm.value)">
+    
+      <h2>Ajouter un participant</h2>
+    <ul>
+      <i>
+      <label for=" nom ">Nom</label>
+      <input type="text" name="nom" id=" nom " ngModel required>
+      </i>  
+      <i>
+        <label for=" prenom ">Prenom</label>
+        <input type="text" name="prenom" id=" prenom " ngModel required>
+      </i>    
+      <i>
+        <label for=" adress ">Adresse</label>
+        <input type="text" name="adress" id=" adress " ngModel required>
+      </i>     
+      <i>
+        <label for=" email ">Email</label>
+        <input type="email" name="email" id=" email " ngModel required>
+      </i> 
+      <i >
+        <label  for=" domaine ">Domaine d'expertise</label>
+        <input  type="text" name="domaine" id=" domaine " ngModel required>
+      </i> 
+    
+    </ul>
+    <button type="submit" [disabled]="!participantaddForm.form.valid">Enregistrer</button>
+  </form>
+  
+
+
+<!--Modier un participant avec son id -->
+
+
+
+  <form  *ngIf="modiftrue" #participantchangeForm="ngForm" (ngSubmit)="edit(participantchangeForm.value)">
+    
+    <h2>Modifier les informations du participant </h2>
+  <ul>
+    <i>
+    <label for=" nom ">Nom</label>
+    <input type="text" name="nom" id=" nom "  [(ngModel)]="participant.nom" required>
+
+  </i>     
+    <i>
+      <label for=" prenom ">Prenom</label>
+      <input type="text" name="prenom" id=" prenom "  [(ngModel)]="participant.prenom" required>
+      
+    </i>     
+    <i>
+      <label for=" adress ">Adresse</label>
+      <input type="text" name="adress" id=" adress " [(ngModel)]="participant.adresse" required>
+   
+    </i>     
+    <i>
+      <label for=" email ">Email</label>
+      <input type="email" name="email" id=" email "  [(ngModel)]="participant.email" required>
+      
+    </i>     
+    <i >
+      <label  for=" domaine ">Domaine d'expertise</label>
+      <input  type="text" name="domaine" id=" domaine " [(ngModel)]="participant.domaine" required>
+     
+    </i>     
+  
+  </ul>
+  <button type="submit" [disabled]="!participantchangeForm.form.valid">Modifier</button>
+</form>
+<table>
+   
+  <tr>
+    <th colspan="2">Listes des participants </th>
+    </tr>
+    
+  <tr *ngFor="let participantss of participants ;index as i ">
+    <td width=85%>
+      {{i}} : 
+      <b>Nom:</b>{{participantss.nom}}|
+      <b>Prenom:</b>{{participantss.prenom}} |
+      <b>Adresse:</b>{{participantss.adresse}}|
+      <b>Email:</b>{{participantss.email}}|
+      <b>Domaine:</b>{{participantss.domaine}}
+    </td>
+    <td width=15%><img (click)="bntedit(participantss.id)" src="../../assets/8.png"  class="textimg"><img (click)="delete(participantss.id)" src="../../assets/5.png"  class="textimg"> </td>
+  </tr>
+     
+  
+</table>
+
+  
+
+
+</div>

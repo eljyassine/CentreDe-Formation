@@ -1,0 +1,56 @@
+ 
+.textadmin{position: relative;
+  bottom: 50px;
+  left: 5px;
+  color: white;
+  width:200%;
+  
+  
+}
+hr{margin:0;}
+.textimg{position: relative;
+   bottom: 22px;
+   left: 5px;
+   color: white;
+   width:200%;
+   
+}
+.box {    height: 25.45625px;
+
+  display: inline-block; 
+  padding-top: 1%;
+  padding-right: 2px;
+
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 40px 0 0 0;
+ 
+  
+}
+
+li a {
+  display: block;
+  color: #ffffff;
+  padding:0;
+  text-decoration: none;
+  padding-bottom:5%;
+  font-size:   30px;;
+  
+}
+
+/* Change the link color on hover */
+li a:hover {
+ 
+  color: white;
+}
+input[type=text], select {
+  width:200px;
+  padding: 5px 10px;
+
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}

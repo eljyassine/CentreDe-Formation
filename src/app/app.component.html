@@ -1,0 +1,53 @@
+
+
+
+ <div *ngIf="logintrue" class="bodyy">
+  
+<div  id="container">
+
+  
+  <form   #participantaddForm="ngForm" (ngSubmit)="btnsubmit(participantaddForm.value)">
+    <h5 style="text-align: center;">realisé par : Mohamed Yassine Elj /2eme ing info c <br>  Ecole National d'ingenieur de Carthage </h5>
+    <h2 >Login</h2>
+  <ul>
+    <i>
+    <label for=" nom ">Nom d'Utilisateur</label>
+    <input type="text" name="nom" id=" nom " placeholder="admin" ngModel required>
+    </i>  
+    <i>
+      <label for=" prenom ">Mot de Passe</label>
+      <input type="password" name="prenom" id=" prenom " placeholder="admin" ngModel required>
+    </i>    
+  
+  </ul>
+  <button type="submit" [disabled]="!participantaddForm.form.valid"  >Confirmer</button>
+  <label for="desc" style="color: red;" >{{text}}</label>
+  
+</form>
+
+</div>
+</div>
+
+
+
+ 
+<div  *ngIf="!logintrue" class="row">
+  <div class="rightcolumn">   
+      <div class ="leftset">
+        <div class="box"><pre class="textimg">{{datee|date : 'd MMM y'}} <br> {{lat}},{{lng}} </pre></div>
+       <div class="box" ><img (click)="btnclick()"  src="../assets/11.png"> </div>
+  
+      </div>
+      
+      
+      <section>
+        <router-outlet></router-outlet>
+      </section>
+  </div>
+  <div class="leftcolumn">
+<app-navbar></app-navbar>
+</div>
+</div>
+
+
+

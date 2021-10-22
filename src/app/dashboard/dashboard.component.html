@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="column" style="background-color:#ff751a;">
+    <div   ><img src="../../assets/4.png"> </div>
+    <h1><b>{{nbrsession}}</b> </h1>
+    <h2>Sessions </h2>
+  </div>
+  <div class="column" style="background-color: #00b300;">
+    <div  ><img src="../../assets/2.png"> </div>
+    <h1><b>{{nbrparticipant}}</b> </h1>
+    <h2>Participants </h2>
+  </div>
+  <div class="column" style="background-color:#7a0099;">
+    <div   ><img src="../../assets/1.png"> </div>
+    <h1><b>{{nbrformateur}}</b> </h1>
+    <h2>Formteurs </h2>
+
+  </div>
+  <p  lass="pad">.</p >
+  <table>
+   
+    <tr>
+      <th >Track</th>
+      <th >Nombre de Sessions</th>
+      </tr>
+      
+    <tr *ngFor="let array of finalArray ">
+      <td  >{{array.sector}}</td>
+      <td  >{{array.count}} </td>
+      </tr>
+    
+  </table>
+  
+  
+   
+   
+</div>
